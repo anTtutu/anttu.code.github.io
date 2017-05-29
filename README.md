@@ -1,2 +1,2 @@
-# anttu.test.github.io
-Anttu's Code Repository Test
+# anttu.blog.github.io
+Anttu's blog Repository
