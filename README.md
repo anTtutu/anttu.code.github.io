@@ -1,2 +1,2 @@
 # anttu.blog.github.io
-Anttu's blog Repository
+Anttu's blog
