@@ -66,6 +66,7 @@
 		<commons.imaging.version>1.0-SNAPSHOT</commons.imaging.version>
 		<zxing.version>3.2.1</zxing.version>
 		<jopt.simple.version>5.0.4</jopt.simple.version>
+		<bouncycastle.version>1.46</bouncycastle.version>
 	</properties>
 
 	<dependencies>
@@ -145,7 +146,7 @@
 		<dependency>
 		    <groupId>org.bouncycastle</groupId>
 		    <artifactId>bcprov-jdk16</artifactId>
-		    <version>1.46</version>
+		    <version>${bouncycastle.version}</version>
 		</dependency>
 	</dependencies>
 </project>
