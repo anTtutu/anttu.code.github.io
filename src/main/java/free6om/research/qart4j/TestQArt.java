@@ -1,5 +1,5 @@
 /**
- * @author cgtu
+ * @author hk
  * @date 2017年10月27日 下午3:25:37
  */
 package free6om.research.qart4j;
@@ -16,7 +16,7 @@ import org.apache.log4j.Logger;
 import com.google.zxing.common.BitMatrix;
 
 /**
- * @author cgtu
+ * @author hk
  * @date 2017年10月27日 下午3:25:37
  */
 public class TestQArt

@@ -1,5 +1,5 @@
 /**
- * @author cgtu
+ * @author hk
  * @date 2017年10月27日 下午2:01:39
  */
 package com.anttu.secret.mac;
@@ -18,7 +18,7 @@ import org.bouncycastle.util.encoders.Hex;
 /**
  * MAC算法工具类
  * 对于HmacMD5、HmacSHA1、HmacSHA256、HmacSHA384、HmacSHA512应用的步骤都是一模一样的
- * 
+ *
  * @author hk
  * @date 2017年10月27日 下午2:01:39
  */
@@ -28,7 +28,7 @@ public class MacCode
     /////////////////////////// HmacMD5///////////////////////////////
     /**
      * 初始化HmacMD5的密钥
-     * 
+     *
      * @return byte[] 密钥
      */
     public static byte[] initHmacMD5Key() throws Exception
@@ -43,7 +43,7 @@ public class MacCode
 
     /**
      * HmacMD5消息摘要
-     * 
+     *
      * @param data
      *            待做摘要处理的数据
      * @param key
@@ -66,7 +66,7 @@ public class MacCode
     /////////////////////////////// HmacSHA1//////////////////////////////////
     /**
      * 初始化HmacSHA1的密钥
-     * 
+     *
      * @return byte[] 密钥
      */
     public static byte[] initHmacSHAKey() throws Exception
@@ -81,7 +81,7 @@ public class MacCode
 
     /**
      * HmacSHA1消息摘要
-     * 
+     *
      * @param data
      *            待做摘要处理的数据
      * @param key
@@ -104,7 +104,7 @@ public class MacCode
     /////////////////////////////// HmacSHA256//////////////////////////////////
     /**
      * 初始化HmacSHA256的密钥
-     * 
+     *
      * @return byte[] 密钥
      */
     public static byte[] initHmacSHA256Key() throws Exception
@@ -119,7 +119,7 @@ public class MacCode
 
     /**
      * HmacSHA256消息摘要
-     * 
+     *
      * @param data
      *            待做摘要处理的数据
      * @param key
@@ -142,7 +142,7 @@ public class MacCode
     /////////////////////////////// HmacSHA384//////////////////////////////////
     /**
      * 初始化HmacSHA384的密钥
-     * 
+     *
      * @return byte[] 密钥
      */
     public static byte[] initHmacSHA384Key() throws Exception
@@ -157,7 +157,7 @@ public class MacCode
 
     /**
      * HmacSHA384消息摘要
-     * 
+     *
      * @param data
      *            待做摘要处理的数据
      * @param key
@@ -180,7 +180,7 @@ public class MacCode
     /////////////////////////////// HmacSHA512//////////////////////////////////
     /**
      * 初始化HmacSHA512的密钥
-     * 
+     *
      * @return byte[] 密钥
      */
     public static byte[] initHmacSHA512Key() throws Exception
@@ -195,7 +195,7 @@ public class MacCode
 
     /**
      * HmacSHA512消息摘要
-     * 
+     *
      * @param data
      *            待做摘要处理的数据
      * @param key
@@ -218,7 +218,7 @@ public class MacCode
     /////////////////////////////// HmacMD2-BouncyCastle才支持的实现//////////////////////////////////
     /**
      * 初始化HmacMD2的密钥
-     * 
+     *
      * @return byte[] 密钥
      */
     public static byte[] initHmacMD2Key() throws Exception
@@ -236,7 +236,7 @@ public class MacCode
 
     /**
      * HmacMD2消息摘要
-     * 
+     *
      * @param data
      *            待做摘要处理的数据
      * @param key
@@ -260,7 +260,7 @@ public class MacCode
 
     /**
      * HmacMD2Hex消息摘要
-     * 
+     *
      * @param data
      *            待做消息摘要处理的数据
      * @param String
@@ -278,7 +278,7 @@ public class MacCode
     /////////////////////////////// HmacMD4-BouncyCastle才支持的实现//////////////////////////////////
     /**
      * 初始化HmacMD2的密钥
-     * 
+     *
      * @return byte[] 密钥
      */
     public static byte[] initHmacMD4Key() throws Exception
@@ -296,7 +296,7 @@ public class MacCode
 
     /**
      * HmacMD4消息摘要
-     * 
+     *
      * @param data
      *            待做摘要处理的数据
      * @param key
@@ -320,7 +320,7 @@ public class MacCode
 
     /**
      * HmacMD4Hex消息摘要
-     * 
+     *
      * @param data
      *            待做消息摘要处理的数据
      * @param String
@@ -338,7 +338,7 @@ public class MacCode
     /////////////////////////////// HmacSHA224-BouncyCastle才支持的实现//////////////////////////////////
     /**
      * 初始化HmacSHA224的密钥
-     * 
+     *
      * @return byte[] 密钥
      */
     public static byte[] initHmacSHA224Key() throws Exception
@@ -356,7 +356,7 @@ public class MacCode
 
     /**
      * HmacSHA224消息摘要
-     * 
+     *
      * @param data
      *            待做摘要处理的数据
      * @param key
@@ -380,7 +380,7 @@ public class MacCode
 
     /**
      * HmacSHA224Hex消息摘要
-     * 
+     *
      * @param data
      *            待做消息摘要处理的数据
      * @param String
@@ -397,7 +397,7 @@ public class MacCode
 
     /**
      * 进行相关的摘要算法的处理展示
-     * 
+     *
      * @throws Exception
      **/
     public static void main(String[] args) throws Exception

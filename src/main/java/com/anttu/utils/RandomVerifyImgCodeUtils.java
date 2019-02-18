@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.anttu.utils;
 
@@ -32,7 +32,7 @@ import com.anttu.tools.GifEncoder;
  * 彩色字符 每个字符的颜色随机，一定会不相同
  * 随机字符 阿拉伯数字 + 小写字母 + 大写字母
  * 3D中空自定义字体，需要单独使用，只有阿拉伯数字和大写字母
- * 
+ *
  * @author hk
  * @date 2017年5月9日 下午7:27:55
  */
@@ -45,7 +45,7 @@ public class RandomVerifyImgCodeUtils
     private static Random random = new Random();
 
     // 放到session中的key
-    public static final String RANDOMCODEKEY = "RANDOMVALIDATECODEKEY";
+    public static final String RANDOMCODEKEY = "RANDOM_VALIDATE_IMAGE_KEY";
 
     // 验证码来源范围，去掉了0,1,I,O,l,o几个容易混淆的字符
     public static final String VERIFY_CODES = "23456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz";
@@ -92,7 +92,7 @@ public class RandomVerifyImgCodeUtils
 
     /**
      * 使用系统默认字符源生成验证码
-     * 
+     *
      * @param verifySize
      *            验证码长度
      * @param uuid
@@ -110,7 +110,7 @@ public class RandomVerifyImgCodeUtils
 
     /**
      * 使用指定源生成验证码
-     * 
+     *
      * @param verifySize
      *            验证码长度
      * @param sources
@@ -136,7 +136,7 @@ public class RandomVerifyImgCodeUtils
 
     /**
      * 输出指定验证码图片流
-     * 
+     *
      * @param w
      *            验证码图片的宽
      * @param h
@@ -311,7 +311,7 @@ public class RandomVerifyImgCodeUtils
 
     /**
      * 获取随机颜色
-     * 
+     *
      * @param fc
      * @param bc
      * @return
@@ -356,7 +356,7 @@ public class RandomVerifyImgCodeUtils
 
     /**
      * 随机字体、随机风格、随机大小
-     * 
+     *
      * @param h
      *            验证码图片高
      * @return
@@ -402,7 +402,7 @@ public class RandomVerifyImgCodeUtils
 
     /**
      * 干扰线按范围获取随机数
-     * 
+     *
      * @return
      */
     private static int getRandomDrawLine()
@@ -415,7 +415,7 @@ public class RandomVerifyImgCodeUtils
 
     /**
      * 噪点数率按范围获取随机数
-     * 
+     *
      * @return
      */
     private static float getRandomDrawPoint()
@@ -427,7 +427,7 @@ public class RandomVerifyImgCodeUtils
 
     /**
      * 获取字体大小按范围随机
-     * 
+     *
      * @param h
      *            验证码图片高
      * @return
@@ -442,7 +442,7 @@ public class RandomVerifyImgCodeUtils
 
     /**
      * 3D中空字体自定义属性类
-     * 
+     *
      * @author hk
      * @date 2017年5月15日 下午3:27:52
      */
@@ -469,11 +469,15 @@ public class RandomVerifyImgCodeUtils
         private byte[] hex2byte(String str)
         {
             if (str == null)
+            {
                 return null;
+            }
             str = str.trim();
             int len = str.length();
             if (len == 0 || len % 2 != 0)
+            {
                 return null;
+            }
 
             byte[] b = new byte[len / 2];
             try
@@ -500,7 +504,7 @@ public class RandomVerifyImgCodeUtils
 
     /**
      * 字符和干扰线扭曲
-     * 
+     *
      * @param g
      *            绘制图形的java工具类
      * @param w1
@@ -518,7 +522,7 @@ public class RandomVerifyImgCodeUtils
 
     /**
      * x轴扭曲
-     * 
+     *
      * @param g
      *            绘制图形的java工具类
      * @param w1
@@ -538,8 +542,7 @@ public class RandomVerifyImgCodeUtils
 
         for (int i = 0; i < h1; i++)
         {
-            double d = (double) (period >> 1)
-                    * Math.sin((double) i / (double) period + (6.2831853071795862D * (double) phase) / (double) frames);
+            double d = (period >> 1) * Math.sin((double) i / (double) period + (6.2831853071795862D * phase) / frames);
             g.copyArea(0, i, w1, 1, (int) d, 0);
             if (borderGap)
             {
@@ -552,7 +555,7 @@ public class RandomVerifyImgCodeUtils
 
     /**
      * y轴扭曲
-     * 
+     *
      * @param g
      *            绘制图形的java工具类
      * @param w1
@@ -571,8 +574,7 @@ public class RandomVerifyImgCodeUtils
         int phase = 7;
         for (int i = 0; i < w1; i++)
         {
-            double d = (double) (period >> 1)
-                    * Math.sin((double) i / (double) period + (6.2831853071795862D * (double) phase) / (double) frames);
+            double d = (period >> 1) * Math.sin((double) i / (double) period + (6.2831853071795862D * phase) / frames);
             g.copyArea(i, 0, 1, h1, 0, (int) d);
             if (borderGap)
             {
@@ -585,7 +587,7 @@ public class RandomVerifyImgCodeUtils
 
     /**
      * 获取透明度,从0到1,自动计算步长
-     * 
+     *
      * @param i
      * @param j
      * @return float 透明度
@@ -599,7 +601,7 @@ public class RandomVerifyImgCodeUtils
 
     /**
      * 生成指定验证码图像文件 - 本地测试生成图片查看效果
-     * 
+     *
      * @param w
      *            验证码图片宽
      * @param h
@@ -642,13 +644,13 @@ public class RandomVerifyImgCodeUtils
 
     /**
      * 本地测试类，可以生成样例验证码图片供观看效果
-     * 
+     *
      * @param args
      * @throws IOException
      */
     public static void main(String[] args) throws IOException
     {
-        File dir = new File("E:/logtest/verifies8");
+        File dir = new File("E:/test/verifies8");
         int w = 120, h = 48;
         for (int i = 0; i < 150; i++)
         {

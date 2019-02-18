@@ -1,5 +1,5 @@
 /**
- * @author cgtu
+ * @author hk
  * @date 2017年10月25日 下午2:37:31
  */
 package com.anttu.utils;
@@ -91,7 +91,7 @@ public class TaxNoVerifyUtils
 
     /**
      * 校验纳税人识别号
-     * 
+     *
      * @author hk
      * @date 2017年10月25日 下午2:40:37
      * @param taxPayerNo
@@ -135,7 +135,7 @@ public class TaxNoVerifyUtils
      * 9—10位行业代码
      * <p>
      * 11—15位为各地自设的顺序码
-     * 
+     *
      * @param taxPayerNo
      * @return
      * @auther hk
@@ -185,7 +185,7 @@ public class TaxNoVerifyUtils
      * 第3位~第8位：登记管理机关行政区划码（共六位阿拉伯数字）<br>
      * 第9位~第17位：主体标识码（组织机构代码）（共九位字符）<br>
      * 第18位：校验码​（共一位字符）<br>
-     * 
+     *
      * @param usciCode
      * @return
      * @auther hk
@@ -237,7 +237,7 @@ public class TaxNoVerifyUtils
 
     /**
      * 校验地区编码合法性
-     * 
+     *
      * @param regionCode
      * @return
      * @auther hk
@@ -265,7 +265,7 @@ public class TaxNoVerifyUtils
 
     /**
      * 校验组织机构编码合法性
-     * 
+     *
      * @param organizationCode
      * @return
      * @auther hk
@@ -312,7 +312,7 @@ public class TaxNoVerifyUtils
 
     /**
      * 校验统一社会信用代码最后一位校验码的合法性
-     * 
+     *
      * @param usciCode
      * @param checkCode
      * @return

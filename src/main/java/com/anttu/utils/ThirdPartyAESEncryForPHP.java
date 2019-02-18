@@ -15,13 +15,13 @@ import org.apache.log4j.Logger;
 /**
  * 与第三方H5互动的H5传输参数的加密工具类
  * 因为这个为了个php配套，base64算法利用apache的，同包名下的另外一个AES加解密工具类base64是自己实现的。可能php改造难度大
- * 
+ *
  * @author hk
  * @date 2017年10月24日 下午2:18:19
  */
-public class ThirdPartyAESEncryptUtils
+public class ThirdPartyAESEncryForPHP
 {
-    private static Logger log = Logger.getLogger(ThirdPartyAESEncryptUtils.class);
+    private static Logger log = Logger.getLogger(ThirdPartyAESEncryForPHP.class);
 
     /**
      * AES加密方式
@@ -32,7 +32,7 @@ public class ThirdPartyAESEncryptUtils
      * AES加密
      * keyStr 秘钥 16位
      * plainText 待加密字符
-     * 
+     *
      * @author hk
      * @date 2017年10月24日 下午3:05:55
      * @param keyStr
@@ -60,7 +60,7 @@ public class ThirdPartyAESEncryptUtils
      * AES解密
      * keyStr 秘钥16位
      * encryptData 相同秘钥加密后的字符串，待解密的数据
-     * 
+     *
      * @author hk
      * @date 2017年10月24日 下午3:06:39
      * @param keyStr
@@ -86,7 +86,7 @@ public class ThirdPartyAESEncryptUtils
 
     /**
      * 生成秘钥，入参16位字符串
-     * 
+     *
      * @author hk
      * @date 2017年10月24日 下午3:08:44
      * @param key
@@ -111,9 +111,9 @@ public class ThirdPartyAESEncryptUtils
     public static void main(String[] args)
     {
 
-        String keyStr = "dBbb4f75579d736C";
+        String keyStr = "1234567890abcdef";
 
-        String plainText = "purcotton2018";
+        String plainText = "test123";
 
         String encText = AESEncrypt(keyStr, plainText);
         String decString = AESDecrypt(keyStr, encText);
