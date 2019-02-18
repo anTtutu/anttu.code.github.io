@@ -67,6 +67,7 @@
 		<zxing.version>3.2.1</zxing.version>
 		<jopt.simple.version>5.0.4</jopt.simple.version>
 		<bouncycastle.version>1.46</bouncycastle.version>
+		<scrypt.version>1.4.0</scrypt.version>
 	</properties>
 
 	<dependencies>
@@ -148,5 +149,20 @@
 		    <artifactId>bcprov-jdk16</artifactId>
 		    <version>${bouncycastle.version}</version>
 		</dependency>
+		
+		<!-- scrypt算法 -->
+		<dependency>
+		    <groupId>com.lambdaworks</groupId>
+		    <artifactId>scrypt</artifactId>
+		    <version>${scrypt.version}</version>
+  		</dependency>
+  		
+  		<!-- cancas -->
+  		<dependency>
+		    <groupId>org.apidesign.canvas</groupId>
+		    <artifactId>canvas-api</artifactId>
+		    <version>0.5.2</version>
+		</dependency>
+  		
 	</dependencies>
 </project>

@@ -113,7 +113,7 @@ public class ThirdPartyAESEncryptUtils
 
         String keyStr = "dBbb4f75579d736C";
 
-        String plainText = "13333333333";
+        String plainText = "purcotton2018";
 
         String encText = AESEncrypt(keyStr, plainText);
         String decString = AESDecrypt(keyStr, encText);
