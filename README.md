@@ -3,7 +3,7 @@
 # com.anttu.password
 模仿花蜜改了点点，自己玩
 
-# com.anttu.mac
+# com.anttu.secret.mac
 看加密时整理的网上信息
 
 # com.anttu.tools
