@@ -3,7 +3,7 @@
 # com.anttu.basic.search
 整理网上的算法-7大基础查找算法
 
-# com.anttu.password
+# com.anttu.basic.sort
 整理网上的算法-9大基础排序算法
 
 # com.anttu.password
