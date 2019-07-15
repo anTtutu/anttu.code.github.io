@@ -4,7 +4,19 @@
 	<groupId>anttu.code.github.io</groupId>
 	<artifactId>anttu.code.github.io</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Anttu</name>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <name>Anttu</name>
 	<description>anttu.code.github.io</description>
 
 	<repositories>
