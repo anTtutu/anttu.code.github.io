@@ -175,6 +175,19 @@
 		    <artifactId>canvas-api</artifactId>
 		    <version>0.5.2</version>
 		</dependency>
+
+		<!-- word cloud -->
+		<dependency>
+			<groupId>com.kennycason</groupId>
+			<artifactId>kumo-core</artifactId>
+			<version>1.17</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.kennycason</groupId>
+			<artifactId>kumo-tokenizers</artifactId>
+			<version>1.17</version>
+		</dependency>
   		
 	</dependencies>
 </project>
