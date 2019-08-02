@@ -80,6 +80,8 @@
 		<jopt.simple.version>5.0.4</jopt.simple.version>
 		<bouncycastle.version>1.46</bouncycastle.version>
 		<scrypt.version>1.4.0</scrypt.version>
+		<canvas.version>0.5.2</canvas.version>
+		<kumo.version>1.17</kumo.version>
 	</properties>
 
 	<dependencies>
@@ -173,20 +175,20 @@
   		<dependency>
 		    <groupId>org.apidesign.canvas</groupId>
 		    <artifactId>canvas-api</artifactId>
-		    <version>0.5.2</version>
+		    <version>${canvas.version}</version>
 		</dependency>
 
 		<!-- word cloud -->
 		<dependency>
 			<groupId>com.kennycason</groupId>
 			<artifactId>kumo-core</artifactId>
-			<version>1.17</version>
+			<version>${kumo.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.kennycason</groupId>
 			<artifactId>kumo-tokenizers</artifactId>
-			<version>1.17</version>
+			<version>${kumo.version}</version>
 		</dependency>
   		
 	</dependencies>
