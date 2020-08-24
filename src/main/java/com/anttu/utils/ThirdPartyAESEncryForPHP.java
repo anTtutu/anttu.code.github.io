@@ -10,7 +10,8 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
 import org.apache.commons.codec.binary.Base64;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * 与第三方H5互动的H5传输参数的加密工具类
@@ -21,7 +22,7 @@ import org.apache.log4j.Logger;
  */
 public class ThirdPartyAESEncryForPHP
 {
-    private static Logger log = Logger.getLogger(ThirdPartyAESEncryForPHP.class);
+    private static Logger log = LogManager.getLogger(ThirdPartyAESEncryForPHP.class);
 
     /**
      * AES加密方式

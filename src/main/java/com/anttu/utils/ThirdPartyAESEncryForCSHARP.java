@@ -7,10 +7,13 @@ package com.anttu.utils;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
-import org.apache.log4j.Logger;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
+
+import java.nio.charset.StandardCharsets;
 
 /**
  * [简要描述]:C# AES加解密接口<br/>
@@ -23,7 +26,7 @@ import sun.misc.BASE64Encoder;
 @SuppressWarnings("restriction")
 public class ThirdPartyAESEncryForCSHARP
 {
-    private static Logger log = Logger.getLogger(ThirdPartyAESEncryForNodeJS.class);
+    private static Logger log = LogManager.getLogger(ThirdPartyAESEncryForNodeJS.class);
 
     public static final String DEFAULT_CODING = "utf-8";
 
@@ -48,7 +51,7 @@ public class ThirdPartyAESEncryForCSHARP
             }
             Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
             cipher.init(Cipher.ENCRYPT_MODE, new SecretKeySpec(key.getBytes(DEFAULT_CODING), "AES"));
-            byte[] bytes = cipher.doFinal(str.getBytes("utf-8"));
+            byte[] bytes = cipher.doFinal(str.getBytes(StandardCharsets.UTF_8));
             return new BASE64Encoder().encode(bytes);
         }
         catch (Exception e)
@@ -81,7 +84,7 @@ public class ThirdPartyAESEncryForCSHARP
             cipher.init(Cipher.DECRYPT_MODE, new SecretKeySpec(key.getBytes(DEFAULT_CODING), "AES"));
             byte[] bytes = new BASE64Decoder().decodeBuffer(str);
             bytes = cipher.doFinal(bytes);
-            return new String(bytes, "utf-8");
+            return new String(bytes, StandardCharsets.UTF_8);
         }
         catch (Exception e)
         {

@@ -4,10 +4,14 @@
  */
 package com.anttu.password;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import static java.lang.Character.isDigit;
 import static java.lang.Character.toUpperCase;
 
-import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.Key;
 import java.security.NoSuchAlgorithmException;
@@ -15,7 +19,7 @@ import java.security.NoSuchAlgorithmException;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
-import org.apache.log4j.Logger;
+
 
 /**
  * 一个多平台密码管理工具，只需要自己输入钥匙密码，然后添加上平台名称，系统帮你生成复杂的密码，不可逆\不上传云\不存储本地
@@ -27,9 +31,9 @@ import org.apache.log4j.Logger;
  */
 public class MultiPlatformStrongPasswordManagerUtils
 {
-    private static Logger log = Logger.getLogger(MultiPlatformStrongPasswordManagerUtils.class);
+    private static Logger log = LogManager.getLogger(MultiPlatformStrongPasswordManagerUtils.class);
 
-    private static final String UTF_8 = "UTF-8";
+    private static final Charset UTF_8 = StandardCharsets.UTF_8;
 
     private static final String HMAC_MD5 = "HmacMD5";
 
@@ -90,12 +94,11 @@ public class MultiPlatformStrongPasswordManagerUtils
      * @param dataText
      * @param keyText
      * @return
-     * @throws UnsupportedEncodingException
      * @throws NoSuchAlgorithmException
      * @throws InvalidKeyException
      */
     private static String hmacMd5(String dataText, String keyText)
-            throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidKeyException
+            throws NoSuchAlgorithmException, InvalidKeyException
     {
         byte[] dataBytes = dataText.getBytes(UTF_8);
         byte[] keyBytes = keyText.getBytes(UTF_8);
