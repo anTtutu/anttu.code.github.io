@@ -21,9 +21,10 @@ import java.util.Random;
 
 import javax.imageio.ImageIO;
 
-import org.apache.log4j.Logger;
 
 import com.anttu.tools.GifEncoder;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * 验证码工具类：
@@ -37,16 +38,26 @@ import com.anttu.tools.GifEncoder;
  */
 public class RandomVerifyImgCodeUtils
 {
-    private static Logger logger = Logger.getLogger(RandomVerifyImgCodeUtils.class);
+    private static Logger logger = LogManager.getLogger(RandomVerifyImgCodeUtils.class);
+
+    /**
+     * 模式
+     */
+    private static final String MODE_LOGIN = "login";
+    private static final String MODE_COUPONS = "coupons";
+    private static final String MODE_3D = "3D";
+    private static final String MODE_MIX = "mix";
+    private static final String MODE_GIF = "GIF";
+    private static final String MODE_MIX_GIF = "mixGIF";
+
     /**
      * 随机类
      */
     private static Random random = new Random();
 
-    // 放到session中的key
-    public static final String RANDOMCODEKEY = "RANDOM_VALIDATE_IMAGE_KEY";
-
-    // 验证码来源范围，去掉了0,1,I,O,l,o几个容易混淆的字符
+    /**
+     * 验证码来源范围，去掉了0,1,I,O,l,o几个容易混淆的字符
+     */
     public static final String VERIFY_CODES = "23456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz";
 
     private static Font baseFont;
@@ -92,12 +103,6 @@ public class RandomVerifyImgCodeUtils
      *
      * @param verifySize
      *            验证码长度
-     * @param uuid
-     *            App端传的参数，app没有session和cookie，必须用设备号在redis记录图形验证码的值
-     * @param platFormName
-     *            平台名称：pc\wap\app app比较特殊，需要单独处理
-     * @param request
-     *            请求
      * @return
      */
     public static String generateVerifyCode(int verifySize)
@@ -188,11 +193,11 @@ public class RandomVerifyImgCodeUtils
         Random random = new Random();
         g2.setColor(getRandColor(160, 200));// 设置线条的颜色
         int lineNumbers = 20;
-        if (type.equals("login") || type.contains("mix") || type.contains("3D"))
+        if (type.equals(MODE_LOGIN) || type.contains(MODE_MIX) || type.contains(MODE_3D))
         {
             lineNumbers = 20;
         }
-        else if (type.equals("coupons"))
+        else if (type.equals(MODE_COUPONS))
         {
             lineNumbers = getRandomDrawLine();
         }
@@ -211,11 +216,11 @@ public class RandomVerifyImgCodeUtils
 
         // 2.添加噪点
         float yawpRate = 0.05f;
-        if (type.equals("login") || type.contains("mix") || type.contains("3D"))
+        if (type.equals(MODE_LOGIN) || type.contains(MODE_MIX) || type.contains(MODE_3D))
         {
             yawpRate = 0.05f; // 噪声率
         }
-        else if (type.equals("coupons"))
+        else if (type.equals(MODE_COUPONS))
         {
             yawpRate = getRandomDrawPoint(); // 噪声率
         }
@@ -239,7 +244,7 @@ public class RandomVerifyImgCodeUtils
         Double rd = rand.nextDouble();
         Boolean rb = rand.nextBoolean();
 
-        if (type.equals("login"))
+        if (type.equals(MODE_LOGIN))
         {
             for (int i = 0; i < verifySize; i++)
             {
@@ -256,7 +261,7 @@ public class RandomVerifyImgCodeUtils
             g2.dispose();
             ImageIO.write(image, "jpg", os);
         }
-        else if (type.contains("GIF") || type.contains("mixGIF"))
+        else if (type.contains(MODE_GIF) || type.contains(MODE_MIX_GIF))
         {
             GifEncoder gifEncoder = new GifEncoder(); // gif编码类，这个利用了洋人写的编码类
             // 生成字符
@@ -367,19 +372,19 @@ public class RandomVerifyImgCodeUtils
         // 字体大小
         int size = getRandomFontSize(h);
 
-        if (type.equals("login"))
+        if (type.equals(MODE_LOGIN))
         {
             return new Font(name, style, size);
         }
-        else if (type.equals("coupons"))
+        else if (type.equals(MODE_COUPONS))
         {
             return new Font(name, style, size);
         }
-        else if (type.contains("3D"))
+        else if (type.contains(MODE_3D))
         {
             return new ImgFontByte().getFont(size, style);
         }
-        else if (type.contains("mix"))
+        else if (type.contains(MODE_MIX))
         {
             int flag = random.nextInt(10);
             if (flag > 4)

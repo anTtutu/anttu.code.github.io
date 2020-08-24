@@ -71,7 +71,7 @@
 		<junit.version>4.12</junit.version>
 		<commons3.version>3.4</commons3.version>
 		<commons.version>2.6</commons.version>
-		<log4j.version>1.2.17</log4j.version>
+		<log4j2.version>2.13.3</log4j2.version>
 		<slf4j.version>1.7.9</slf4j.version>
 		<commons.codec.version>1.10</commons.codec.version>
 		<commons.io.version>2.6</commons.io.version>
@@ -82,6 +82,8 @@
 		<scrypt.version>1.4.0</scrypt.version>
 		<canvas.version>0.5.2</canvas.version>
 		<kumo.version>1.17</kumo.version>
+		<jsoup.version>1.11.3</jsoup.version>
+		<fastjson.version>1.2.58</fastjson.version>
 	</properties>
 
 	<dependencies>
@@ -124,11 +126,16 @@
 			<version>${commons.imaging.version}</version>
 		</dependency>
 
-		<!-- log4j -->
+		<!-- log4j2 -->
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>${log4j.version}</version>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${log4j2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>${log4j2.version}</version>
 		</dependency>
 
 		<dependency>
@@ -190,6 +197,18 @@
 			<artifactId>kumo-tokenizers</artifactId>
 			<version>${kumo.version}</version>
 		</dependency>
-  		
+
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>${jsoup.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>${fastjson.version}</version>
+		</dependency>
+
 	</dependencies>
 </project>

@@ -20,22 +20,21 @@ public class IdCardVerifyUtils
 	/** 大陆地区地域编码最小值 **/
 	public static final int MIN_MAINLAND_AREACODE = 110000;
 	/** 香港地域编码值 **/
-	public static final int HONGKONG_AREACODE = 810000; // 香港地域编码值
+	public static final int HONGKONG_AREACODE = 810000;
 	/** 台湾地域编码值 **/
 	public static final int TAIWAN_AREACODE = 710000;
 	/** 澳门地域编码值 **/
 	public static final int MACAO_AREACODE = 820000;
 
 	/** 数字正则 **/
-	public static final String regexNum = "^[0-9]*$";
+	public static final String REGEX_NUM = "^[0-9]*$";
 	/** 闰年生日正则 **/
-	public static final String regexBirthdayInLeapYear = "^((19[0-9]{2})|(200[0-9])|(201[0-5]))((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|[1-2][0-9]))$";
+	public static final String REGEX_BIRTHDAY_IN_LEAP_YEAR = "^((19[0-9]{2})|(200[0-9])|(201[0-5]))((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|[1-2][0-9]))$";
 	/** 平年生日正则 **/
-	public static final String regexBirthdayInCommonYear = "^((19[0-9]{2})|(200[0-9])|(201[0-5]))((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|1[0-9]|2[0-8]))$";
+	public static final String REGEX_BIRTHDAY_IN_COMMON_YEAR = "^((19[0-9]{2})|(200[0-9])|(201[0-5]))((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|1[0-9]|2[0-8]))$";
 
 	private static final Set<String> BLACK_SET = new HashSet<String>()
 	{
-
 		private static final long serialVersionUID = 48136604486603324L;
 		{
 			add("111111111111111");
@@ -135,15 +134,17 @@ public class IdCardVerifyUtils
 	 */
 	private static String getVerifyCode(String idNumber)
 	{
-		if (!Pattern.matches(regexNum, idNumber.substring(0, 17)))
+		if (!Pattern.matches(REGEX_NUM, idNumber.substring(0, 17)))
 		{
 			return null;
 		}
-		String[] ValCodeArr =
+
+		String[] valCodeArr =
 		{
 				"1", "0", "X", "9", "8", "7", "6", "5", "4", "3", "2"
 		};
-		String[] Wi =
+
+		String[] wi =
 		{
 				"7", "9", "10", "5", "8", "4", "2", "1", "6", "3", "7", "9", "10", "5", "8", "4", "2"
 		};
@@ -151,9 +152,9 @@ public class IdCardVerifyUtils
 		int sum = 0;
 		for (int i = 0; i < 17; i++)
 		{
-			sum = sum + Integer.parseInt(String.valueOf(idNumber.charAt(i))) * Integer.parseInt(Wi[i]);
+			sum = sum + Integer.parseInt(String.valueOf(idNumber.charAt(i))) * Integer.parseInt(wi[i]);
 		}
-		return ValCodeArr[sum % 11];
+		return valCodeArr[sum % 11];
 	}
 
 	/**
@@ -168,6 +169,7 @@ public class IdCardVerifyUtils
 		}
 		catch (Exception e)
 		{
+			System.out.println("checkBirthday failed,error:" + e);
 		}
 		if (null == year)
 		{
@@ -175,11 +177,11 @@ public class IdCardVerifyUtils
 		}
 		if (isLeapYear(year))
 		{
-			return Pattern.matches(regexBirthdayInLeapYear, idNumberBirthdayStr);
+			return Pattern.matches(REGEX_BIRTHDAY_IN_LEAP_YEAR, idNumberBirthdayStr);
 		}
 		else
 		{
-			return Pattern.matches(regexBirthdayInCommonYear, idNumberBirthdayStr);
+			return Pattern.matches(REGEX_BIRTHDAY_IN_COMMON_YEAR, idNumberBirthdayStr);
 		}
 	}
 

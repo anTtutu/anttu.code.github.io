@@ -136,7 +136,7 @@ public class TaxNoVerifyUtils
      * <p>
      * 11—15位为各地自设的顺序码
      *
-     * @param taxPayerNo
+     * @param intpCode
      * @return
      * @auther hk
      * @date 2017年7月7日

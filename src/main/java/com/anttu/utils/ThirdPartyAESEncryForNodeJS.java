@@ -4,13 +4,15 @@
  */
 package com.anttu.utils;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.net.URLEncoder;
 import java.security.MessageDigest;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
-import org.apache.log4j.Logger;
 
 /**
  * [简要描述]:nodejs AES加解密接口<br/>
@@ -22,7 +24,7 @@ import org.apache.log4j.Logger;
  */
 public class ThirdPartyAESEncryForNodeJS
 {
-    private static Logger log = Logger.getLogger(ThirdPartyAESEncryForNodeJS.class);
+    private static Logger log = LogManager.getLogger(ThirdPartyAESEncryForNodeJS.class);
 
     public static final String DEFAULT_CODING = "utf-8";
 
