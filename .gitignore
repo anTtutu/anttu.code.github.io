@@ -4,3 +4,7 @@
 /.project
 /.classpath
 /*.iml
+/rebel.xml
+/EncryptionException.java
+/LocalMainPwdHuami.java
+/TikTokKit.java

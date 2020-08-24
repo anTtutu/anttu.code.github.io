@@ -17,17 +17,19 @@ import java.util.regex.Pattern;
  */
 public class TikTokKit
 {
-    private static String cookies = "odin_tt=9a16fa42e650a96379a5901a3d146c7c244dc0c35971927f6e13c208fc4bcf9cc952542516f78dc9098ac4d179f3b127cddfdff2942d259dda9ca33de8ae7677; install_id=43619087057; ttreq=1$4c4b4cc4b31e6f2f4203b62a1df12b43e224434c; qh[360]=1";
+//    private static String cookies = "odin_tt=9a16fa42e650a96379a5901a3d146c7c244dc0c35971927f6e13c208fc4bcf9cc952542516f78dc9098ac4d179f3b127cddfdff2942d259dda9ca33de8ae7677; install_id=43619087057; ttreq=1$4c4b4cc4b31e6f2f4203b62a1df12b43e224434c; qh[360]=1";
 
-    public TikTokKit() {
+    private static String cookies = "__tea_sdk__user_unique_id=6640623185359095300; install_id=64299263404; odin_tt=6494d200b81b10b70a654dfc9ebabb3a580a0aba2b205814e30f5e5eeda92d30a7b213382aa100f25482545a2e77428b; sessionid=a5858dca192e9f41edb0e82026f0deb2; sessionid_ss=a5858dca192e9f41edb0e82026f0deb2; sid_guard=a5858dca192e9f41edb0e82026f0deb2|1581986026|5183995|Sat,+18-Apr-2020+00:33:41+GMT; sid_tt=a5858dca192e9f41edb0e82026f0deb2; tt_webid=6640623185359095300; ttreq=1$6485025a215497a8aca8fde1de5862585455511d; uid_tt=7a5285a1a07eeb84713b35e8da9cd725; uid_tt_ss=7a5285a1a07eeb84713b35e8da9cd725";
 
+    public TikTokKit()
+    {
     }
 
     /**
-     *
      * 这里获取作品ID
      */
-    public static String getId(String url) {
+    public static String getId(String url)
+    {
         String result = sendGet(url);
         result = getSubString(result, "/share/video/", "/?");
         return result;
@@ -35,23 +37,24 @@ public class TikTokKit
 
     /**
      * 解析真实地址返回的数据其实是json格式的,Java语言本身不支持json解析,需要借助第三方jar
-     *
      * 这里就直接使用getsubstring
-     *
      */
-    public static String getUrl(String url) {
+    public static String getUrl(String url)
+    {
         String result = sendGet(url);
         result = getSubString(result, "play_addr_lowbr", "width");
         result = getSubString(result, "url_list\":[\"", "\",\"");
         return result;
     }
 
-    private static String getUrlFromContent(String strContent) {
+    private static String getUrlFromContent(String strContent)
+    {
         String regex = "(http:|https:)//[^[A-Za-z0-9\\._\\?%&+\\-=/#]]*";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(strContent);
         String result = null;
-        while (matcher.find()) {
+        while (matcher.find())
+        {
             result = matcher.group();
         }
 
@@ -61,30 +64,36 @@ public class TikTokKit
 
     /**
      * 取出中间文本
-     *
      */
-    private static String getSubString(String str, String left, String right) {
+    private static String getSubString(String str, String left, String right)
+    {
         String strRight = "";
 
         int indexLeft = str.indexOf(left);
-        if (indexLeft == -1) {
+        if (indexLeft == -1)
+        {
             return "";// 没有找到直接返回空以免出现异常
-        } else {
+        }
+        else
+        {
             strRight = str.substring(indexLeft);
         }
         int length = str.length() - strRight.length();
         int indexRight = strRight.indexOf(right);
-        if (indexRight == -1) {
+        if (indexRight == -1)
+        {
             return "";
         }
         String result = str.substring(length + left.length(), length + indexRight);
         return result;
     }
 
-    private static String sendGet(String url) {
+    private static String sendGet(String url)
+    {
         String result = "";
         BufferedReader in = null;
-        try {
+        try
+        {
             URL realUrl = new URL(url);
             // 打开和URL之间的连接
             URLConnection connection = realUrl.openConnection();
@@ -92,25 +101,34 @@ public class TikTokKit
             connection.setRequestProperty("accept", "*/*");
             connection.setRequestProperty("connection", "Keep-Alive");
             connection.setRequestProperty("Accept-Encoding", "utf-8");
-            connection.setRequestProperty("Host", "api-hl.amemv.com");
+            connection.setRequestProperty("Host", "aweme-hl.snssdk.com");
             connection.setRequestProperty("user-agent", "okhttp/3.10.0.1");
             connection.setRequestProperty("cookie", cookies);
             // 建立实际的连接
             connection.connect();
             in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             String line;
-            while ((line = in.readLine()) != null) {
+            while ((line = in.readLine()) != null)
+            {
                 result += line;
             }
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             // 发送异常
             return "发送失败,请检查URL地址是否正确";
-        } finally {
-            try {
-                if (in != null) {
+        }
+        finally
+        {
+            try
+            {
+                if (in != null)
+                {
                     in.close();
                 }
-            } catch (Exception e2) {
+            }
+            catch (Exception e2)
+            {
                 // 关闭异常
                 System.out.println("关闭异常");
             }
@@ -118,12 +136,13 @@ public class TikTokKit
         return result;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
 
-        //		String url = " http://v.douyin.com/ACxoU1";// 抖音短视频链接
+        // String url = " http://v.douyin.com/ACxoU1";// 抖音短视频链接
 
         // 得到分享内容中的地址
-        String strContent = "#在抖音，记录美好生活#阿姨怒撕港独标语、怒怼港独分子！香港是中国的香港！#我爱你中国 #我和我的祖国 http://v.douyin.com/AVkpBp/ 复制此链接，打开【抖音短视频】，直接观看视频！";
+        String strContent = "#在抖音，记录美好生活# #火影忍者  #阿祖v 这次我想要200个赞，兄弟们可以满足我吗? http://v.douyin.com/Pos3sr/ 复制此链接，打开【抖音短视频】，直接观看视频！";
         String url = getUrlFromContent(strContent);
         System.out.println("抖音视频表面地址为:" + url);
 
