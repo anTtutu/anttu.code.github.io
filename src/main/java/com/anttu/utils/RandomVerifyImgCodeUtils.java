@@ -51,6 +51,12 @@ public class RandomVerifyImgCodeUtils
     private static final String MODE_MIX_GIF = "mixGIF";
 
     /**
+     * 测试文件后缀
+     */
+    private static final String FILE_GIF_NAME = ".gif";
+    private static final String FILE_JPG_NAME = ".jpg";
+
+    /**
      * 随机类
      */
     private static Random random = new Random();
@@ -579,7 +585,7 @@ public class RandomVerifyImgCodeUtils
      *            随机验证码
      * @throws IOException
      */
-    public static void outputImage(int w, int h, File outputFile, String code) throws IOException
+    public static void outputImage(int w, int h, File outputFile, String code, int random) throws IOException
     {
         if (outputFile == null)
         {
@@ -600,7 +606,36 @@ public class RandomVerifyImgCodeUtils
             // outputImage(w, h, fos, code, "GIF"); //测试领券，噪点和干扰线为范围随机值0.05f ~ 0.1f和20 ~ 155
             // outputImage(w, h, fos, code, "GIF3D"); //测试领券，噪点和干扰线为范围随机值0.05f ~ 0.1f和20 ~ 155
             // outputImage(w, h, fos, code, "mix2"); //测试领券，噪点和干扰线为范围随机值0.05f ~ 0.1f和20 ~ 155
-            outputImage(w, h, fos, code, "mixGIF"); // 测试领券，噪点和干扰线为范围随机值0.05f ~ 0.1f和20 ~ 155
+            // outputImage(w, h, fos, code, "mixGIF"); // 测试领券，噪点和干扰线为范围随机值0.05f ~ 0.1f和20 ~ 155
+
+            switch (random)
+            {
+                case 0:
+                    outputImage(w, h, fos, code, "login");
+                    break;
+                case 1:
+                    outputImage(w, h, fos, code, "GIF");
+                    break;
+                case 2:
+                    outputImage(w, h, fos, code, "3D");
+                    break;
+                case 3:
+                    outputImage(w, h, fos, code, "GIF3D");
+                    break;
+                case 4:
+                    outputImage(w, h, fos, code, "mix2");
+                    break;
+                case 5:
+                    outputImage(w, h, fos, code, "mixGIF");
+                    break;
+                case 6:
+                    outputImage(w, h, fos, code, "coupons");
+                    break;
+                default:
+                    outputImage(w, h, fos, code, "mixGIF");
+                    break;
+            }
+            
             fos.close();
         }
         catch (IOException e)
@@ -617,13 +652,33 @@ public class RandomVerifyImgCodeUtils
      */
     public static void main(String[] args) throws IOException
     {
-        File dir = new File("E:/test/verifies8");
+        File dir = new File("D:/test/verifies1");
         int w = 120, h = 48;
         for (int i = 0; i < 150; i++)
         {
+            // 验证码的随机类型
+            int random = new Random().nextInt(7);
+
             String verifyCode = generateVerifyCode(4);
-            File file = new File(dir, verifyCode + ".gif");
-            outputImage(w, h, file, verifyCode);
+            String fileName = verifyCode + ".png";
+            switch (random)
+            {
+                case 0:
+                case 2:
+                case 4:
+                case 6:
+                    fileName = verifyCode + FILE_JPG_NAME;
+                    break;
+                case 1:
+                case 3:
+                case 5:
+                default:
+                    fileName = verifyCode + FILE_GIF_NAME;
+                    break;
+            }
+
+            File file = new File(dir, fileName);
+            outputImage(w, h, file, verifyCode, random);
         }
     }
 }

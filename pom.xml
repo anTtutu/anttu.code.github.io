@@ -68,7 +68,7 @@
 	</repositories>
 
 	<properties>
-		<junit.version>4.12</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<commons3.version>3.4</commons3.version>
 		<commons.version>2.6</commons.version>
 		<log4j2.version>2.13.3</log4j2.version>
