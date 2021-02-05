@@ -83,6 +83,7 @@ public class TaxNoVerifyUtils
         INSTITUTIONALCATEGORY.put("52", "民政民办非企业单位");
         INSTITUTIONALCATEGORY.put("53", "民政基金会");
         INSTITUTIONALCATEGORY.put("59", "民政其他");
+        INSTITUTIONALCATEGORY.put("81", "文化");
         INSTITUTIONALCATEGORY.put("91", "工商企业");
         INSTITUTIONALCATEGORY.put("92", "工商个体工商户");
         INSTITUTIONALCATEGORY.put("93", "工商农民专业合作社");
