@@ -90,7 +90,7 @@ public class RSAUtils {
         try {
             KeyFactory factory = KeyFactory.getInstance(KEY_ALGORITHM);
             return factory.generatePublic(x509EncodedKeySpec);
-        } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
@@ -101,12 +101,11 @@ public class RSAUtils {
      * @return 真正符合规范的私钥
      */
     private static PrivateKey restorePrivateKey(byte[] keyBytes) {
-        PKCS8EncodedKeySpec pkcs8EncodedKeySpec = new PKCS8EncodedKeySpec(
-                keyBytes);
+        PKCS8EncodedKeySpec pkcs8EncodedKeySpec = new PKCS8EncodedKeySpec(keyBytes);
         try {
             KeyFactory factory = KeyFactory.getInstance(KEY_ALGORITHM);
             return factory.generatePrivate(pkcs8EncodedKeySpec);
-        } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
@@ -125,9 +124,7 @@ public class RSAUtils {
             Cipher cipher = Cipher.getInstance(CIPHER_ALGORITHM);
             cipher.init(Cipher.ENCRYPT_MODE, key);
             return cipher.doFinal(plainText);
-        } catch (NoSuchAlgorithmException | NoSuchPaddingException
-                | InvalidKeyException | IllegalBlockSizeException
-                | BadPaddingException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
@@ -164,9 +161,7 @@ public class RSAUtils {
             Cipher cipher = Cipher.getInstance(CIPHER_ALGORITHM);
             cipher.init(Cipher.DECRYPT_MODE, key);
             return new String(cipher.doFinal(encodedText));
-        } catch (NoSuchAlgorithmException | NoSuchPaddingException
-                | InvalidKeyException | IllegalBlockSizeException
-                | BadPaddingException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
