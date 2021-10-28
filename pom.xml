@@ -84,6 +84,8 @@
 		<kumo.version>1.17</kumo.version>
 		<jsoup.version>1.14.2</jsoup.version>
 		<fastjson.version>1.2.58</fastjson.version>
+		<coobird.version>0.4.13</coobird.version>
+	    <hutool.version>5.7.9</hutool.version>
 	</properties>
 
 	<dependencies>
@@ -204,6 +206,7 @@
 			<version>${jsoup.version}</version>
 		</dependency>
 
+		<!-- fastjson -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
@@ -214,7 +217,14 @@
 		<dependency>
 			<groupId>net.coobird</groupId>
 			<artifactId>thumbnailator</artifactId>
-			<version>0.4.13</version>
+			<version>${coobird.version}</version>
+		</dependency>
+
+		<!-- hutool -->
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-all</artifactId>
+			<version>${hutool.version}</version>
 		</dependency>
 	</dependencies>
 </project>
