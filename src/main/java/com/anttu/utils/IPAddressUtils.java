@@ -15,13 +15,13 @@ import java.util.Enumeration;
  * @ClassName：ClientIPAddressUtils
  * @Description：获取客户端ip地址
  * @author：Anttu
- *               @Date：28/10/2021 19:18
+ * @Date：28/10/2021 19:18
  */
 public class IPAddressUtils
 {
     /**
      * 获取客户端操作电脑ip
-     *
+     * x-forwarded-for 容易通过请求头造假，request的 remoteAddress但是容易拿到的代理 ip，因此需要多重判断和获取
      * @param request
      * @return
      */
