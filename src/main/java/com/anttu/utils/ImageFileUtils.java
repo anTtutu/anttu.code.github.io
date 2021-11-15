@@ -18,7 +18,7 @@ import java.io.OutputStream;
  * @author：Anttu
  * @Date：2020/11/5/0005 13:37
  */
-public class ImageFileTools
+public class ImageFileUtils
 {
     /**
      * 指定大小进行缩放
