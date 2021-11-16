@@ -76,7 +76,7 @@
 		<commons.codec.version>1.10</commons.codec.version>
 		<commons.io.version>2.7</commons.io.version>
 		<commons.imaging.version>1.0-SNAPSHOT</commons.imaging.version>
-		<zxing.version>3.2.1</zxing.version>
+		<zxing.version>3.4.1</zxing.version>
 		<jopt.simple.version>5.0.4</jopt.simple.version>
 		<bouncycastle.version>1.68</bouncycastle.version>
 		<scrypt.version>1.4.0</scrypt.version>
@@ -85,8 +85,9 @@
 		<jsoup.version>1.14.2</jsoup.version>
 		<fastjson.version>1.2.58</fastjson.version>
 		<coobird.version>0.4.13</coobird.version>
-	    <hutool.version>5.7.9</hutool.version>
+		<hutool.version>5.7.9</hutool.version>
 		<servlet.version>3.1.0</servlet.version>
+        <qrcode.version>2.6.1</qrcode.version>
 	</properties>
 
 	<dependencies>
@@ -234,5 +235,16 @@
             <artifactId>javax.servlet-api</artifactId>
             <version>${servlet.version}</version>
         </dependency>
+
+		<!-- art qrcode -->
+		<dependency>
+			<groupId>com.github.liuyueyi.media</groupId>
+			<artifactId>qrcode-plugin</artifactId>
+			<version>${qrcode.version}</version>
+		</dependency>
+
+
     </dependencies>
+
+
 </project>
