@@ -71,7 +71,7 @@
 		<junit.version>4.13.1</junit.version>
 		<commons3.version>3.4</commons3.version>
 		<commons.version>2.6</commons.version>
-		<log4j2.version>2.13.3</log4j2.version>
+		<log4j2.version>2.17.0</log4j2.version>
 		<slf4j.version>1.7.9</slf4j.version>
 		<commons.codec.version>1.10</commons.codec.version>
 		<commons.io.version>2.7</commons.io.version>
