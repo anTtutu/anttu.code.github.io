@@ -1,4 +1,4 @@
-package com.anttu.tools;
+package com.anttu.dynamic.util;
 
 import java.util.Random;
 

@@ -20,13 +20,24 @@
             <!-- 输出日志的格式 -->
             <!--
             %d{yyyy-MM-dd HH:mm:ss, SSS} : 日志生产时间
-            %p : 日志输出格式
-            %c : logger的名称
-            %m : 日志内容，即 logger.info("message")
-            %n : 换行符
+            %d : 输出日志时间点的日期或时间,也可以如上面指定时间格式
+            %p : 输出优先级，即DEBUG，INFO，WARN，ERROR，FATAL
+            %c : 输出所属的类目，通常就是所在类的全名
+            %C或%class : 输出为所在类的全路径名
+            %M或%method : 日志输出所在方法名
+            %m或%msg或%message : 日志内容，即 logger.info("message")
+            %n : 换行符,回车换行符，Windows平台为“/r/n”，Unix平台为“/n”
             %C : Java类名
             %L : 日志输出所在行数
-            %M : 日志输出所在方法名
+            %l : 输出日志事件的发生位置，包括类目名、发生的线程，以及在代码中的行数。举例：Testlog4.main(TestLog4.java:10)
+            %r或%relative: 输出自应用启动到输出该log信息耗费的毫秒数
+            %t或%thread : 输出产生该日志事件的线程名
+            %T或%tid或%threadId : 输出线程id
+            %t或%tn或%thread或%threadName : 输出线程id
+            %tp或%threadPriority : 输出线程优先级
+            %i : rollingFile滚动文件的个数，比如: xxx.2021-01-01.0.log
+            %F或%file : 输出所在类名.java，如所在类为com.test.LogTest，则输出为LogTest.java
+            %sn或%sequenceNumber : 输出自增序列
             hostName : 本地机器名
             hostAddress : 本地ip地址 -->
             <PatternLayout pattern="${PATTERN}"/>

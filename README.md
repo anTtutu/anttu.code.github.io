@@ -1,16 +1,40 @@
 # Anttu Demo Code
 
+# com.anttu.asciimg
+> 字符画，图片和gif都支持
+
 # com.anttu.basic.search
 > 整理网上的算法-7大基础查找算法
 
 # com.anttu.basic.sort
 > 整理网上的算法-9大基础排序算法
 
+# com.anttu.config
+> redis做二级缓存
+
+# com.anttu.dynamic
+> AppId、密钥生成应用开发平台验证
+
+# com.anttu.otp
+> otp一次性token验证
+
 # com.anttu.password
 > 模仿花密改了点点，自己玩
 
+# com.anttu.qrcode.art
+> 艺术二维码
+
 # com.anttu.secret.mac
 > 看加密时整理的网上信息
+
+# com.anttu.secret.rsa
+> rsa加密工具
+
+# com.anttu.secret.sm2
+> 国密sm2加密工具
+
+# com.anttu.tiktokkit
+> 抖音短视频无水印视频解析，自己玩
 
 # com.anttu.tools
 > 工具类：有凯撒算法、Gif图片工具类
@@ -27,9 +51,6 @@ java与php、Nodejs、C#的AES传输加解密工具
 
 # com.anttu.wordcloud
 > java版本的词云，自己玩
-
-# com.anttu.tiktokkit
-> 抖音短视频无水印视频解析，自己玩
 
 # free6om.research.qart4j
 > 花式、艺术二维码，copy来自己加工玩玩，还没研究透
