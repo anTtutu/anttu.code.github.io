@@ -5,7 +5,7 @@
 	<groupId>anttu.code.github.io</groupId>
 	<artifactId>anttu.code.github.io</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Anttu</name>
+	<name>anttu.code.github.io</name>
 	<description>anttu.code.github.io</description>
 
     <build>
@@ -31,6 +31,20 @@
                 </configuration>
             </plugin>
             -->
+
+			<!-- owasp check CVE 检查依赖包是否有漏洞  command: mvn verify -->
+			<plugin>
+				<groupId>org.owasp</groupId>
+				<artifactId>dependency-check-maven</artifactId>
+				<version>6.5.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
         </plugins>
     </build>
 
@@ -99,15 +113,15 @@
 		<canvas.version>0.5.2</canvas.version>
 		<kumo.version>1.17</kumo.version>
 		<jsoup.version>1.14.2</jsoup.version>
-		<fastjson.version>1.2.58</fastjson.version>
+		<fastjson.version>1.2.76</fastjson.version>
 		<coobird.version>0.4.13</coobird.version>
 		<hutool.version>5.7.9</hutool.version>
 		<servlet.version>3.1.0</servlet.version>
         <qrcode.version>2.6.1</qrcode.version>
-		<mybatis.version>1.3.1</mybatis.version>
-		<validate.version>1.1.0.Final</validate.version>
-		<hinernate.version>5.2.0.Final</hinernate.version>
-		<mysql.verson>8.0.16</mysql.verson>
+		<mybatis.version>2.2.1</mybatis.version>
+		<validate.version>2.0.1.Final</validate.version>
+		<hinernate.version>7.0.2.Final</hinernate.version>
+		<mysql.verson>8.0.28</mysql.verson>
 		<caffeine.version>2.5.5</caffeine.version>
 		<pagehelper.version>5.1.10</pagehelper.version>
 		<pool.version>2.6.2</pool.version>
