@@ -127,6 +127,7 @@
 		<pool.version>2.6.2</pool.version>
 		<lombok.version>1.18.16</lombok.version>
 		<hashids.version>1.0.3</hashids.version>
+		<image.version>2.6.4</image.version>
 	</properties>
 
 	<parent>
@@ -310,6 +311,12 @@
 			<groupId>com.github.liuyueyi.media</groupId>
 			<artifactId>qrcode-plugin</artifactId>
 			<version>${qrcode.version}</version>
+		</dependency>
+
+		<dependency>
+			<artifactId>image-plugin</artifactId>
+			<groupId>com.github.liuyueyi.media</groupId>
+			<version>${image.version}</version>
 		</dependency>
 
 		<!--jsr 303-->
