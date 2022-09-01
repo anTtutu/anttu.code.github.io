@@ -112,7 +112,7 @@
 		<scrypt.version>1.4.0</scrypt.version>
 		<canvas.version>0.5.2</canvas.version>
 		<kumo.version>1.17</kumo.version>
-		<jsoup.version>1.14.2</jsoup.version>
+		<jsoup.version>1.15.3</jsoup.version>
 		<fastjson.version>1.2.76</fastjson.version>
 		<coobird.version>0.4.13</coobird.version>
 		<hutool.version>5.7.9</hutool.version>
