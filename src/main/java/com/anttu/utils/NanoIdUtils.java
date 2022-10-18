@@ -34,13 +34,13 @@ public final class NanoIdUtils {
      * Creates url-friendly NanoId Strings using 64 unique symbols.
      */
     public static final char[] DEFAULT_ALPHABET =
-            "_-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+            "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
 
     /**
      * The default size used by this class.
      * Creates NanoId Strings with slightly more unique values than UUID v4.
      */
-    public static final int DEFAULT_SIZE = 64;
+    public static final int DEFAULT_SIZE = 18;
 
     /**
      * Static factory to retrieve a url-friendly, pseudo randomly generated, NanoId String.
@@ -87,10 +87,10 @@ public final class NanoIdUtils {
         final int mask = (2 << (int) Math.floor(Math.log(alphabet.length - 1) / Math.log(2))) - 1;
         final int step = (int) Math.ceil(1.6 * mask * size / alphabet.length);
 
-        final StringBuilder idBuilder = new StringBuilder();
+        final StringBuilder idBuilder = new StringBuilder(size);
+        final byte[] bytes = new byte[step];
 
         while (true) {
-            final byte[] bytes = new byte[step];
             random.nextBytes(bytes);
 
             for (int i = 0; i < step; i++) {

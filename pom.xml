@@ -112,8 +112,8 @@
 		<scrypt.version>1.4.0</scrypt.version>
 		<canvas.version>0.5.2</canvas.version>
 		<kumo.version>1.17</kumo.version>
-		<jsoup.version>1.14.2</jsoup.version>
-		<fastjson.version>1.2.76</fastjson.version>
+		<jsoup.version>1.15.3</jsoup.version>
+		<fastjson.version>1.2.83</fastjson.version>
 		<coobird.version>0.4.13</coobird.version>
 		<hutool.version>5.7.9</hutool.version>
 		<servlet.version>3.1.0</servlet.version>
@@ -128,6 +128,10 @@
 		<lombok.version>1.18.16</lombok.version>
 		<hashids.version>1.0.3</hashids.version>
 		<image.version>2.6.4</image.version>
+		<nanoid.version>jdk6.1</nanoid.version>
+		<ulid.version>5.0.2</ulid.version>
+		<tsid.version>5.0.2</tsid.version>
+		<ksuid.version>4.0.2</ksuid.version>
 	</properties>
 
 	<parent>
@@ -379,6 +383,37 @@
 			<artifactId>hashids</artifactId>
 			<version>${hashids.version}</version>
 		</dependency>
+
+		<!-- jnanoid -->
+		<dependency>
+			<groupId>io.github.dph5199278</groupId>
+			<artifactId>jnanoid</artifactId>
+			<version>${nanoid.version}</version>
+		</dependency>
+
+		<!-- ULID -->
+		<dependency>
+			<groupId>com.github.f4b6a3</groupId>
+			<artifactId>ulid-creator</artifactId>
+			<version>${ulid.version}</version>
+		</dependency>
+
+		<!-- TSID -->
+		<dependency>
+			<groupId>com.github.f4b6a3</groupId>
+			<artifactId>tsid-creator</artifactId>
+			<version>${tsid.version}</version>
+		</dependency>
+
+		<!-- KSUID -->
+		<!--
+		<dependency>
+			<groupId>com.github.f4b6a3</groupId>
+			<artifactId>ksuid-creator</artifactId>
+			<version>${ksuid.version}</version>
+		</dependency>
+		-->
+
 
     </dependencies>
 
