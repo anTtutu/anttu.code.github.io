@@ -1,5 +1,6 @@
 package com.anttu.demo;
 
+import com.github.f4b6a3.tsid.TsidCreator;
 import org.junit.Test;
 
 /**
@@ -13,8 +14,18 @@ import org.junit.Test;
 public class TestTSID {
 
     @Test
-    public void generateTSID () {
+    public void generateLongTSID () {
+        for (int i = 0; i < 10; i++) {
+           Long tsid = TsidCreator.getTsid256().toLong();
+           System.out.println("Long TSID:" + tsid);
+        }
+    }
 
-
+    @Test
+    public void generateStringTSID () {
+        for (int i = 0; i < 10; i++) {
+            String tsid = TsidCreator.getTsid256().toString();
+            System.out.println("String TSID:" + tsid);
+        }
     }
 }
