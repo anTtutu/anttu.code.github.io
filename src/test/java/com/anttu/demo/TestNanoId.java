@@ -1,6 +1,6 @@
 package com.anttu.demo;
 
-import com.anttu.utils.NanoIdUtils;
+import com.anttu.unionid.NanoIdUtils;
 import org.junit.Test;
 
 /**

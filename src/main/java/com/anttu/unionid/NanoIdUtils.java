@@ -1,4 +1,4 @@
-package com.anttu.utils;
+package com.anttu.unionid;
 
 import java.security.SecureRandom;
 import java.util.Random;
