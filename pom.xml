@@ -186,7 +186,7 @@
 		<hinernate.version>7.0.2.Final</hinernate.version>
 		<mysql.verson>8.0.28</mysql.verson>
 		<caffeine.version>2.5.5</caffeine.version>
-		<pagehelper.version>5.1.10</pagehelper.version>
+		<pagehelper.version>5.3.1</pagehelper.version>
 		<pool.version>2.6.2</pool.version>
 		<lombok.version>1.18.16</lombok.version>
 		<hashids.version>1.0.3</hashids.version>
