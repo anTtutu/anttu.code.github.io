@@ -13,7 +13,7 @@ import org.springframework.cache.annotation.EnableCaching;
  * @author：Anttu
  * @Date：22/1/2022 15:20
  */
-@MapperScan({"com.anttu.mapper", "com.anttu.dynamic.mapper"})
+@MapperScan({"com.anttu.*.mapper"})
 @SpringBootApplication(scanBasePackages = "com.anttu.*")
 @EnableCaching
 public class AnttuCodeGithubIOApplication {

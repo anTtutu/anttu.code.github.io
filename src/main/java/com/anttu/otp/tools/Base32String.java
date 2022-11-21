@@ -13,7 +13,6 @@ import java.util.Locale;
  */
 public class Base32String {
     // singleton
-
     private static final Base32String INSTANCE =
             new Base32String("ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"); // RFC 4648/3548
 

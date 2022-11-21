@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.purcotton.otp.mapper.UserOTPBindMapper">
+<mapper namespace="com.anttu.otp.mapper.UserOTPBindMapper">
     <resultMap id="BaseResultMap" type="com.anttu.otp.entity.UserOTPBindEntity">
         <id column="ID" property="id" jdbcType="BIGINT"/>
         <id column="USER_ID" property="userId" jdbcType="BIGINT"/>
@@ -33,7 +33,7 @@
                 )
     </insert>
 
-    <update id="updateStatus" parameterType="com.purcotton.otp.entity.UserOTPBindEntity">
+    <update id="updateStatus" parameterType="com.anttu.otp.entity.UserOTPBindEntity">
         update user_otp_bind
         <set>
             <if test="isFlag != null">is_flag = #{is_flag,jdbcType=INTEGER},</if>

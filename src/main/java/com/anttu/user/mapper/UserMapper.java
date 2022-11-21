@@ -16,7 +16,6 @@ import com.anttu.user.entity.User;
  * @author：Anttu
  * @Date：20/8/2021 10:08
  */
-@Repository
 public interface UserMapper {
     List<UserVo> queryAll();
 

@@ -28,7 +28,7 @@ public class TestQueryImpl implements TestQuery {
     @Autowired
     private UserMapper userMapper;
 
-    @Cacheable(key = "'queryAll'", sync = true)
+    @Cacheable(cacheNames = "user", key = "'queryAll'", sync = true)
     @Override
     public List<UserVo> queryAll() {
         return userMapper.queryAll();

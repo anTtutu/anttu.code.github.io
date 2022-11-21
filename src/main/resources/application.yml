@@ -10,8 +10,8 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: test
-    password: 11QQaazz
+    username: root
+    password: root123456
     hikari:
       # 等待连接池分配连接的最大时长（毫秒）
       connection-timeout: 30000
@@ -32,7 +32,7 @@ spring:
   redis:
     database: 0
     port: 6379
-    password: 11QQaazz
+    password: test123456
     # 链接超时时间
     timeout: 5000
     jedis:
@@ -63,7 +63,8 @@ spring:
       spec: maximumSize=500,expireAdterWrite=60s
 
 mybatis:
-  mapperLocations: classpath:mapper/*.xml
+  mapperLocations: classpath:**/mapper/**/*Mapper.xml
+  type-aliases-package: com.anttu.**.entity
 
 server:
   tomcat:

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.purcotton.mapper.UserMapper">
+<mapper namespace="com.anttu.user.mapper.UserMapper">
     <resultMap id="BaseResultMap" type="com.anttu.user.entity.User">
         <id column="ID" property="id" jdbcType="BIGINT"/>
         <result column="ACCOUNT" property="account" jdbcType="VARCHAR"/>
@@ -13,7 +13,7 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        ID, ACCOUNT, PASSWORD, NAME, SEX, COMPANY, CREATETIME, UPDATETIME
+        ID, ACCOUNT, PASSWORD, NAME, SEX, COMPANY, CREATE_TIME, UPDATE_TIME
     </sql>
 
     <select id="queryAll" resultMap="BaseResultMap">

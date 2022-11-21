@@ -1,7 +1,6 @@
 package com.anttu.user.service;
 
 import com.anttu.user.bean.UserVo;
-import com.anttu.user.entity.User;
 
 import java.util.List;
 
