@@ -198,7 +198,7 @@
 		<ksuid.version>4.0.2</ksuid.version>
         <api.fan.version>1.0.16</api.fan.version>
 		<tiny.pinyin.version>2.0.3.RELEASE</tiny.pinyin.version>
-        <jackson.version>2.11.0</jackson.version>
+        <jackson.version>2.12.7.1</jackson.version>
 	</properties>
 
 	<parent>
