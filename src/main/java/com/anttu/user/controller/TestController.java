@@ -2,10 +2,7 @@ package com.anttu.user.controller;
 
 import com.anttu.user.bean.UserVo;
 import com.anttu.user.service.TestQuery;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -48,5 +45,10 @@ public class TestController {
     @GetMapping("/demo4")
     public boolean test4 (@RequestParam("name") String name, @RequestParam("id") Long id) {
         return testQuery.updateName(name, id);
+    }
+
+    @PostMapping("/demo5")
+    public boolean test5(@RequestBody UserVo userVo) {
+        return testQuery.insert(userVo);
     }
 }

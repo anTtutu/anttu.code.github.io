@@ -44,7 +44,7 @@ public class AppController {
     public AppResponse createApp (@RequestBody AppRequest appRequest) {
         AppEntity appResult = appService.findAppName(appRequest.getAppName());
         if (!ObjectUtils.isEmpty(appResult)) {
-            return AppResponse.failed(401, "appName is exists", appResult);
+            return AppResponse.failed(403, "appName is exists", appResult);
         }
         String appId = AppIDUtils.generateAppId();
         String appSecret = AppSecretUtils.generateAppSecret(appId);

@@ -63,7 +63,7 @@ spring:
       spec: maximumSize=500,expireAdterWrite=60s
 
 mybatis:
-  mapperLocations: classpath:**/mapper/**/*Mapper.xml
+  mapperLocations: classpath:/mapper/**/*Mapper.xml
   type-aliases-package: com.anttu.**.entity
 
 server:

@@ -2,6 +2,8 @@ package com.anttu.dynamic.entity;
 
 import java.util.Date;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 /**
@@ -17,6 +19,7 @@ public class AppEntity {
     /**
      * 主键，自增
      */
+    @TableId(value = "id", type = IdType.AUTO)
     private long id;
     /**
      * app 名称，全局唯一

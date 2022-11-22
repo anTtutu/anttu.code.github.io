@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,7 @@ import com.anttu.dynamic.service.AppService;
  */
 @Service
 @Cacheable(cacheManager = "caffeineCacheManager")
+@CacheConfig(cacheNames = "app")
 public class AppServiceImpl implements AppService {
 
     @Resource
@@ -32,25 +34,25 @@ public class AppServiceImpl implements AppService {
         return appMapper.insertApp(appEntity);
     }
 
-    @Cacheable(value = "findAll", key = "'queryAllByPage'", sync = true)
+    @Cacheable(value = "all", key = "'all'")
     @Override
     public List<AppEntity> findAll(QueryPageBean queryPageBean) {
         return appMapper.findAll(queryPageBean);
     }
 
-    @Cacheable(cacheNames = "App", key = "#appEntity.getId()", sync = true)
+    @Cacheable(value = "id", key = "#appEntity.getId()")
     @Override
     public AppEntity findApp(AppEntity appEntity) {
         return appMapper.findApp(appEntity);
     }
 
-    @Cacheable(cacheNames = "App", key = "#appId", sync = true)
+    @Cacheable(value = "appId", key = "#appId")
     @Override
     public AppEntity findAppId(String appId) {
         return appMapper.findAppId(appId);
     }
 
-    @Cacheable(cacheNames = "App", key = "#appName", sync = true)
+    @Cacheable(value = "appName", key = "#appName")
     @Override
     public AppEntity findAppName(String appName) {
         return appMapper.findAppName(appName);

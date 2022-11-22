@@ -23,9 +23,9 @@ public interface UserMapper {
 
     List<UserVo> selectBySex(@Param("sex") Integer sex);
 
-    UserVo selectByAccount(@Param("account") String name);
+    User selectByAccount(@Param("account") String name);
 
-    int insert(UserVo userVo);
+    int insert(User user);
 
     int updateName(@Param("name") String name, @Param("id") Long id);
 

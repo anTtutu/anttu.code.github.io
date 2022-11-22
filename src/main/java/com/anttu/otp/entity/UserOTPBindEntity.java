@@ -2,6 +2,8 @@ package com.anttu.otp.entity;
 
 import java.util.Date;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 /**
@@ -14,6 +16,7 @@ import lombok.Data;
  */
 @Data
 public class UserOTPBindEntity {
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
     private Long userId;
     private String account;

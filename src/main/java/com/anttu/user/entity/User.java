@@ -1,5 +1,7 @@
 package com.anttu.user.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,6 +25,7 @@ public class User {
     /**
      * id
      */
+    @TableId(value = "id", type = IdType.AUTO)
     private int id;
     /**
      * 账号

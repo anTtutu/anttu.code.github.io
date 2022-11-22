@@ -162,7 +162,7 @@
 	<properties>
 		<springboot.version>2.5.5</springboot.version>
 		<junit.version>4.13.1</junit.version>
-		<commons3.version>3.4</commons3.version>
+		<commons3.version>3.12.0</commons3.version>
 		<commons.version>2.6</commons.version>
 		<log4j2.version>2.17.1</log4j2.version>
 		<slf4j.version>1.7.9</slf4j.version>
@@ -182,9 +182,10 @@
 		<servlet.version>3.1.0</servlet.version>
 		<qrcode.version>2.6.1</qrcode.version>
 		<mybatis.version>2.2.1</mybatis.version>
+		<mybatis.plus.version>3.1.0</mybatis.plus.version>
 		<validate.version>2.0.1.Final</validate.version>
 		<hinernate.version>7.0.2.Final</hinernate.version>
-		<mysql.verson>8.0.28</mysql.verson>
+		<mysql.version>8.0.28</mysql.version>
 		<caffeine.version>2.5.5</caffeine.version>
 		<pagehelper.version>5.1.10</pagehelper.version>
 		<pool.version>2.6.2</pool.version>
@@ -195,6 +196,9 @@
 		<ulid.version>5.0.2</ulid.version>
 		<tsid.version>5.0.2</tsid.version>
 		<ksuid.version>4.0.2</ksuid.version>
+        <api.fan.version>1.0.16</api.fan.version>
+		<tiny.pinyin.version>2.0.3.RELEASE</tiny.pinyin.version>
+        <jackson.version>2.11.0</jackson.version>
 	</properties>
 
 	<parent>
@@ -403,7 +407,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>${mysql.verson}</version>
+			<version>${mysql.version}</version>
 		</dependency>
 
 		<!-- 连接池 -->
@@ -475,8 +479,35 @@
 			<version>${ksuid.version}</version>
 		</dependency>
 
+		<!-- mybatis plus -->
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-annotation</artifactId>
+			<version>${mybatis.plus.version}</version>
+		</dependency>
 
-    </dependencies>
+		<!-- faker data generator -->
+		<dependency>
+			<groupId>com.apifan.common</groupId>
+			<artifactId>common-random</artifactId>
+			<version>${api.fan.version}</version>
+		</dependency>
+
+		<!-- TinyPinyin -->
+		<dependency>
+			<groupId>io.github.biezhi</groupId>
+			<artifactId>TinyPinyin</artifactId>
+			<version>${tiny.pinyin.version}</version>
+		</dependency>
+
+		<!-- jackson -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
+	</dependencies>
 
 
 </project>
