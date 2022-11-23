@@ -15,6 +15,9 @@
 # com.anttu.dynamic
 > AppId、密钥生成应用开发平台验证
 
+# com.anttu.loadblance
+> 负载均衡算法，轮询的2种算法：1、普通轮询 2、平滑权重轮询算法
+
 # com.anttu.otp
 > otp一次性token验证
 
@@ -38,6 +41,12 @@
 
 # com.anttu.tools
 > 工具类：有凯撒算法、Gif图片工具类
+
+# com.anttu.unionid
+> 类似uuid的唯一字符串，nanoid算法工具类，长度比uuid短
+
+# com.anttu.user
+> 用户demo演示
 
 # com.anttu.utils
 > 工具：  
