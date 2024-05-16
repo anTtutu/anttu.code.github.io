@@ -178,7 +178,7 @@
 		<jsoup.version>1.15.3</jsoup.version>
 		<fastjson.version>1.2.83</fastjson.version>
 		<coobird.version>0.4.13</coobird.version>
-		<hutool.version>5.7.9</hutool.version>
+		<hutool.version>5.8.21</hutool.version>
 		<servlet.version>3.1.0</servlet.version>
 		<qrcode.version>2.6.1</qrcode.version>
 		<mybatis.version>2.2.1</mybatis.version>
